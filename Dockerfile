@@ -1,6 +1,6 @@
 # Maven build container 
 
-FROM maven:3.5.2-jdk-8-alpine AS maven_build
+FROM maven:3.6.3-openjdk-11 AS maven_build
 
 COPY pom.xml /tmp/
 
@@ -12,7 +12,7 @@ RUN mvn package
 
 #pull base image
 
-FROM openjdk:8-jdk-alpine
+FROM openjdk
 
 #maintainer 
 MAINTAINER dstar55@yahoo.com
